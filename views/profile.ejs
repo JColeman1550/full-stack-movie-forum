@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title>MovieTime Forum</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+          <h3>Movie Ratings</h3>
+          <ul class="messages">
+            <% for(var i = 0; i < messages.length; i++) { %>
+              <li class="message">
+                <span><%= messages[i].name %></span> 
+                
+                <span class="star-rating"><% for(var s = 0; s < messages[i].rating; s++) { %>
+                  <i class="fa fa-star" data-id="<%= messages[i].name %>" data-id="<%= messages[i].rating %>" aria-hidden="true"></i><% }%></span>
+                <span><i class="fa fa-edit" data-id="<%= messages[i].name %>" aria-hidden="true"></i></span>
+                <span><i class="fa fa-trash-o" data-id="<%= messages[i].name %>" aria-hidden="true"></i></span>
+              </li>
+            <% } %>
+          </ul>
+
+          <h2>Add a Movie</h2>
+          <% if (user.local.email) { %>
+          <form action="/messages" method="POST">
+            <input type="text" name="name" placeholder="Movie name" required>
+            <input type="text" name="rating" placeholder="Rating" min="1" max="5" required>
+            <button type="submit">Add Movie</button>
+          </form>
+          <div><a href="/logout" class="btn btn-default btn-sm">Logout</a></div>
+          <% } %>
+        </div>
+    </div>
+
+ 
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
