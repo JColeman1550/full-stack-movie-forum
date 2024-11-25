@@ -13,6 +13,8 @@
 
 Check out the live application here: [MovieTime Forum](https://web-production-c6b90.up.railway.app/)
 
+<img src="https://github.com/JColeman1550/full-stack-movie-forum/blob/main/Screenshot%202024-11-24%20231048.png?raw=true">
+
 
 ## Technologies Used 🛠️
 
